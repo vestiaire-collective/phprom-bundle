@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ChaseIsabelle\PHPromBundle\DependencyInjection;
 
+use PHProm\PHProm;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -32,6 +33,9 @@ class Configuration implements ConfigurationInterface
                     ->isRequired()
                     ->cannotBeEmpty()
                 ->end()
+                ->scalarNode('api')
+                    ->cannotBeEmpty()
+                    ->defaultValue(PHProm::GRPC_API)
                 ->arrayNode('routes')
                     ->prototype('scalar')->end()
                     ->defaultValue([])
