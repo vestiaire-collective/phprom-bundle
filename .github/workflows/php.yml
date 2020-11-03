@@ -30,8 +30,8 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '7.4'
-        tools: pecl
-        extensions: grpc
+#        tools: pecl
+#        extensions: grpc
 
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
