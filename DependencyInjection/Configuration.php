@@ -36,6 +36,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('api')
                     ->cannotBeEmpty()
                     ->defaultValue(PHProm::GRPC_API)
+                ->end()
                 ->arrayNode('routes')
                     ->prototype('scalar')->end()
                     ->defaultValue([])
