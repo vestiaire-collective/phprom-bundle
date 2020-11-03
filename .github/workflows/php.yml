@@ -29,9 +29,9 @@ jobs:
     - name: Setup PHP with pecl extension
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '7.4'
-#        tools: pecl
-#        extensions: grpc
+        php-version: '7.2'
+        tools: pecl
+        extensions: grpc
 
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
